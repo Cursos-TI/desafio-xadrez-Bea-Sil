@@ -19,10 +19,10 @@ int main () {
    // 5 casas para cima e á direita 
 
    printf("\n Movimentando o Bispo \n");
-   int b = 1;
-   while (b <= B_bispo){
-    printf("Cima,direita \n", b);
-    b++;
+   int j = 1;
+   while (j <= B_bispo){
+    printf("Cima,direita \n", j);
+    j++;
    }
 
 
@@ -30,11 +30,31 @@ int main () {
    // A rainha se move em todas as direções 
    // 8 casas para a esquerda
    printf("\n Movimentando a Rainha \n");
-   int r = 1; 
+   int k = 1; 
    do{
     printf("Esquerda \n");
-    r++;
-   } while (r <= R_rainha);
+    k++;
+   } while (k <= R_rainha);
+
+   // Movimentando o Cavalo usando loops aninhados
+   // O cavalo se movimenta em L
+   // Duas casas para baixo e 1 para esquerda 
+     printf("\n Movimentando o Cavalo \n");
+
+    const int C_baixo = 2;
+    const int C_esquerda = 1;
+
+    // Primeiro movimento: duas casas para baixo (usando FOR)
+    for (int i = 1; i <= C_baixo; i++) {
+        printf("Baixo\n");
+
+        // Segundo movimento: uma casa para a esquerda (usando WHILE aninhado)
+        int e = 0;
+        while (e < C_esquerda && i == C_baixo) {
+            printf("Esquerda\n");
+            e++;
+        }
+    }
    
    printf("\nSimulação concluída com sucesso!\n");
 
