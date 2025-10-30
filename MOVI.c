@@ -1,5 +1,48 @@
 #include <stdio.h> 
 
+// Funções recursivas — Torre, Bispo e Rainha
+
+// Função recursiva: Torre
+void moverTorre(int casas) {
+    if (casas == 0) return;
+    printf("Direita\n");
+    moverTorre(casas - 1);
+}
+// Função recursiva: Rainha
+void moverRainha(int casas) {
+    if (casas == 0) return;
+    printf("Esquerda\n");
+    moverRainha(casas - 1);
+}
+
+// Função recursiva + loops aninhados: Bispo
+void moverBispo(int casas) {
+    if (casas == 0) return;
+
+    for (int i = 0; i < 1; i++) {
+        printf("Cima, Direita\n");
+    }
+
+    moverBispo(casas - 1); // Chamada recursiva
+}
+// Movimento do Cavalo — loops aninhados 
+void moverCavalo() {
+    printf("\nMovimentando o Cavalo\n");
+
+    int movCima = 2;
+    int movDireita = 1;
+
+    // Loop externo: sobe 2 casas
+    for (int i = 1; i <= movCima; i++) {
+        printf("Cima\n");
+    }
+
+    // Loop interno: move 1 casa à direita
+    for (int j = 1; j <= movDireita; j++) {
+        printf("Direita\n");
+    }
+
+
 int main () {
    const int B_bispo = 5;
    const int T_torre = 5;
